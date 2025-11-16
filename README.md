@@ -1,4 +1,4 @@
-# Eureka Training Notes (notes_website)
+# Training Notes (notes_website)
 
 Overview
 --------
