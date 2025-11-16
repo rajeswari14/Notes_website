@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eureka training notes: quick reference notes for Linux, shell scripting, networking, Git, and more.">
+    <title>Eureka Training Notes</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>📚 Eureka Training Notes</h1>
+            <div class="header-controls">
+                <input type="text" id="searchInput" class="search-box" placeholder="🔍 Search notes..." aria-label="Search notes">
+                <button id="darkModeToggle" type="button" class="dark-mode-btn" aria-pressed="false">🌙 Dark Mode</button>
+            </div>
+        </header>
+
+        <!-- Filters -->
+        <div class="filters">
+            <label for="dateFilter">Filter by date:</label>
+            <select id="dateFilter" class="date-filter">
+                <option value="">All dates</option>
+            </select>
+        </div>
+
+        <!-- Notes Container -->
+        <main id="notesContainer" class="notes-container">
+            <!-- Notes will be inserted here by script.js -->
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2025 Eureka Training Notes | Last updated: <span id="lastUpdated">November 16, 2025</span></p>
+        </footer>
+    </div>
+
+    <script src="notes.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,214 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --header-bg: #2c3e50;
+    --header-text: #ffffff;
+    --note-bg: #f8f9fa;
+    --note-border: #e9ecef;
+    --search-bg: #ecf0f1;
+    --accent-color: #3498db;
+    --accent-hover: #2980b9;
+}
+
+body.dark-mode {
+    --bg-color: #1a1a1a;
+    --text-color: #e0e0e0;
+    --header-bg: #0d0d0d;
+    --note-bg: #2d2d2d;
+    --note-border: #404040;
+    --search-bg: #333333;
+    --accent-color: #5dade2;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header */
+header {
+    background-color: var(--header-bg);
+    color: var(--header-text);
+    padding: 30px 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin-bottom: 20px;
+    font-size: 2.5em;
+}
+
+.header-controls {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.search-box {
+    flex: 1;
+    min-width: 250px;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--search-bg);
+    color: var(--text-color);
+    font-size: 1em;
+    transition: background-color 0.3s;
+}
+
+.search-box:focus {
+    outline: none;
+    background-color: var(--accent-color);
+    color: white;
+}
+
+.dark-mode-btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--accent-color);
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.dark-mode-btn:hover {
+    background-color: var(--accent-hover);
+}
+
+/* Filters */
+.filters {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: var(--note-bg);
+    border-radius: 5px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.filters label {
+    font-weight: bold;
+}
+
+.date-filter {
+    padding: 8px 12px;
+    border: 1px solid var(--note-border);
+    border-radius: 5px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    cursor: pointer;
+    min-width: 200px;
+}
+
+/* Notes Container */
+.notes-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.note {
+    background-color: var(--note-bg);
+    border-left: 5px solid var(--accent-color);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.note:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.note-title {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--accent-color);
+}
+
+.note-date {
+    font-size: 0.9em;
+    color: #999;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.note-content {
+    font-size: 1em;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.note-content pre {
+    background-color: var(--search-bg);
+    padding: 10px;
+    border-radius: 5px;
+    overflow-x: auto;
+    margin: 10px 0;
+}
+
+/* No Results */
+.no-results {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 1.2em;
+    color: #999;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    border-top: 1px solid var(--note-border);
+    font-size: 0.9em;
+    color: #999;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .header-controls {
+        flex-direction: column;
+    }
+
+    .search-box {
+        min-width: 100%;
+    }
+
+    .filters {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .date-filter {
+        width: 100%;
+    }
+}
